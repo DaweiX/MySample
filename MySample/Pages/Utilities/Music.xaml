@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="MySample.Pages.Utilities.Music"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySample.Pages.Utilities"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <local:IconChange x:Key="icon_1"/>
+            <local:IconChange2 x:Key="icon_2"/>
+        </Grid.Resources>
+        <ScrollViewer>
+            <StackPanel Margin="8">
+                <TextBlock Text="音乐播放器" FontSize="36"/>
+                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                    <Button>
+                        <SymbolIcon Symbol="List"/>
+                        <Button.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Click="creat_Click">创建播放列表...</MenuFlyoutItem>
+                                <MenuFlyoutItem Click="show_Click">打开播放列表...</MenuFlyoutItem>
+                                <MenuFlyoutSeparator/>
+                                <MenuFlyoutSubItem Text="当前播放列表">
+                                    <MenuFlyoutItem Click="add_Click">
+                                        添加歌曲
+                                    </MenuFlyoutItem>
+                                    <ToggleMenuFlyoutItem x:Name="remove" Click="remove_Click">
+                                        移除歌曲
+                                    </ToggleMenuFlyoutItem>
+                                </MenuFlyoutSubItem>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                    <TextBlock x:Name="listname" Margin="8,0,0,0"/>
+                </StackPanel>
+                <TextBlock x:Name="a"/>
+                <ListBox x:Name="list_result" SelectionChanged="list_result_SelectionChanged"/>
+                <MediaPlayerElement x:Name="MyMedia" AutoPlay="False"/>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton x:Name="PlayOrPause" Margin="10,0,0,0" Click="PlayOrPause_Click">
+                        <SymbolIcon Symbol="{Binding ElementName=PlayOrPause,Path=IsChecked,Converter={StaticResource icon_1}}"/>
+                    </ToggleButton>
+                    <ToggleButton x:Name="repeat" Margin="10,0,0,0" Click="Repeat_Click" IsThreeState="True">
+                        <SymbolIcon Symbol="{Binding ElementName=repeat,Path=IsChecked,Converter={StaticResource icon_2}}"/>
+                    </ToggleButton>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

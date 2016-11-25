@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="MySample.Pages.Utilities.Animation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySample.Pages.Utilities"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel Margin="8">
+                <TextBlock Text="基础动画" FontSize="36"/>
+                <Canvas Height="300" Width="300">
+                    <Line X1="50" X2="50" Y1="0" Y2="300" StrokeThickness="2" Stroke="{ThemeResource SystemControlHighlightAltListAccentLowBrush}" StrokeDashArray="3"/>
+                    <Line X1="250" X2="250" Y1="0" Y2="300" StrokeThickness="2" Stroke="{ThemeResource SystemControlHighlightAltListAccentLowBrush}" StrokeDashArray="3"/>
+                    <Line X1="0" X2="300" Y1="50" Y2="50" StrokeThickness="2" Stroke="{ThemeResource SystemControlHighlightAltListAccentLowBrush}" StrokeDashArray="3"/>
+                    <Line X1="0" X2="300" Y1="250" Y2="250" StrokeThickness="2" Stroke="{ThemeResource SystemControlHighlightAltListAccentLowBrush}" StrokeDashArray="3"/>
+                    <Grid Height="200" Width="200" Background="Red"
+                           Margin="50" x:Name="sampleGrid">
+                    </Grid>
+                </Canvas>
+                <Grid Width="240">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Width="100" Grid.Row="0" Grid.Column="0" Content="淡出" Click="Button1_Click"/>
+                    <Button Width="100" Grid.Row="0" Grid.Column="1" Content="旋转" Click="Button2_Click"/>
+                    <Button Width="100" Grid.Row="1" Grid.Column="0" Content="变宽" Click="Button3_Click"/>
+                    <Button Margin="0,4" Width="100" Grid.Row="1" Grid.Column="1" Content="移动" Click="Button4_Click"/>
+                    <Button Width="100" Grid.Row="2" Grid.Column="0" Content="变高" Click="Button5_Click"/>
+                    <Button Width="100" Grid.Row="2" Grid.Column="1" Content="扭曲" Click="Button6_Click"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

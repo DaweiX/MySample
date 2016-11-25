@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="MySample.Pages.Web.WebGet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySample.Pages.Web"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel Margin="8">
+                <TextBlock Text="Get请求" FontSize="36"/>
+                <TextBlock Text="请输入网站名:" Margin="0,8,0,4"/>
+                <TextBox x:Name="sitename" Width="300" Text="http://www.baidu.com/" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
+                    <Button Content="获取" Click="Button_Click" Width="120"/>
+                    <Button Content="重输" Click="Button_Click_1" Width="120" Margin="8,0,0,0"/>
+                </StackPanel>
+                <TextBlock Text="归属地查询"/>
+                <TextBox Header="请输入手机号码：" x:Name="txtInput" Margin="0,8,0,8"/>
+                <Button Content="查询" HorizontalAlignment="Stretch" Click="Button_Click_2"/>
+                <TextBlock x:Name="txtResult" Margin="0,8,0,0" FontSize="20" TextWrapping="WrapWholeWords"/>
+                <TextBlock Text="列车信息查询"/>
+                <TextBox Header="请输入车次：" x:Name="txt1" Margin="0,8,0,8"/>
+                    <Button Content="查询" HorizontalAlignment="Stretch" Click="Button_Click_3"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="names" FontSize="20" Margin="0,8,0,0"/>
+                    <TextBlock x:Name="txtResult2" Margin="0,8,0,0" FontSize="20" TextWrapping="WrapWholeWords"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

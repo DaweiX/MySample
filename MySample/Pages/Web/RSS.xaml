@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="MySample.Pages.Web.RSS"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySample.Pages.Web"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem Header="文章列表">
+                <ScrollViewer>
+                    <StackPanel Margin="8">
+                        <TextBlock Text="RSS资源" FontSize="36"/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="txtUri" Header="请输入URI:" PlaceholderText="选择一个网站"/>
+                                <Button Content="获取" Margin="20,8,0,0" Click="Button_Click" VerticalAlignment="Bottom" Width="200"/>
+                            </StackPanel>
+                            <ListView x:Name="lvItems" IsItemClickEnabled="True" ItemClick="lvItems_ItemClick" Grid.Row="1">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title.Text}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem Header="文章正文">
+                <WebView x:Name="wv"/>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

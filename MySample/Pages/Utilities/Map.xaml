@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="MySample.Pages.Utilities.Map"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySample.Pages.Utilities"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel Margin="8">
+                <TextBlock Text="地图与位置" FontSize="36"/>
+                <Maps:MapControl x:Name="myMap" Height="300" ZoomLevel="10" Margin="0,8,0,8"/>
+                <Button x:Name="getlocation" Content="显示当前位置" Click="getlocation_Click"/>
+                <TextBlock x:Name="txt_Latitude"/>
+                <TextBlock x:Name="txt_Longitude" Margin="0,4,0,4"/>
+                <TextBlock x:Name="txt_Accuracy"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

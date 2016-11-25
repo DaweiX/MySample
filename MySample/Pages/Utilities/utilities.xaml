@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="MySample.Pages.Utilities.utilities"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySample.Pages.Utilities"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem Header="基本动画">
+                <StackPanel>
+                    <Button x:Name="Ani" Content="Animation" Height="200" Width="240" Background="Gold" Click="Ani_Click"/>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="自适应">
+                <StackPanel>
+                    <Button x:Name="Fit" Content="Fit" Height="200" Width="240" Background="Gainsboro" Click="Fit_Click"/>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="转换器">
+                <StackPanel>
+                    <Button x:Name="Cov" Content="Convert" Height="200" Width="240" Background="Orange" Click="Cov_Click"/>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="地图">
+                <StackPanel>
+                    <Button x:Name="Map" Content="Map" Height="200" Width="240" Background="DarkGoldenrod" Click="Map_Click"/>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="通知">
+                <StackPanel>
+                    <Button x:Name="Noti" Content="Notification" Height="200" Width="240" Background="Gold" Click="Noti_Click"/>
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
+    </StackPanel>
+</Page>

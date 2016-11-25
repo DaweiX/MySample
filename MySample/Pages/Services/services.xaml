@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="MySample.Pages.Services.services"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySample.Pages.Services"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem Header="导航">
+                <StackPanel>
+                    <Button x:Name="Nav" Content="Navigation" Height="200" Width="240" Background="LightGreen" Click="Nav_Click"/>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="绑定">
+                <StackPanel>
+                    <Button x:Name="Bid" Content="Binding" Height="200" Width="240" Background="Green" Click="Bid_Click"/>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="应用数据">
+                <StackPanel>
+                    <Button x:Name="Dat" Content="Data" Height="200" Width="240" Background="SpringGreen" Click="Dat_Click"/>
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
+    </StackPanel>
+</Page>
